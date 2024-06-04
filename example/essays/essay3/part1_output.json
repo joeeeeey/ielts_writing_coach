@@ -1,0 +1,48 @@
+{
+    "Task Analysis": {
+        "Aspect": [
+            {
+                "Essay Topic": "Around the world, fewer languages are being spoken, and just a few are becoming more common. Is this a positive or negative development?"
+            },
+            {
+                "Key Questions": [
+                    "Is the spread of fewer, more common languages globally a positive development?",
+                    "Or is it a negative development?"
+                ]
+            },
+            {
+                "Keywords and Synonyms": {
+                    "languages": "tongues, dialects, linguistic codes",
+                    "fewer": "less, a smaller number of",
+                    "spoken": "used, communicated, uttered",
+                    "common": "widespread, prevalent, universal",
+                    "positive": "beneficial, advantageous, favorable",
+                    "negative": "detrimental, adverse, unfavorable",
+                    "development": "change, evolution, progression"
+                }
+            }
+        ]
+    },
+    "revised_content_dict": {
+        "1": {
+            "content": "Globalization has led to the widespread dominance of certain languages across most parts of the world. The development of these dominant languages has come at a cost: fewer people speak local languages. Some individuals are concerned about this trend and believe it may lead to negative outcomes, although there are also notable positive changes.",
+            "examiner_summary": "This introductory paragraph sets the stage for discussing the effects of language dominance due to globalization. It touches upon both views of the argument effectively. However, the language needs refinement for clarity and grammatical precision."
+        },
+        "2": {
+            "content": "Opponents argue that dominant languages challenge cultural diversity and national identity. Local tales, integral to cultural heritage, are often preserved in native languages. Yet, as people increasingly abandon their local languages, these stories may be forgotten. Moreover, the focus on national languages in education might weaken young people's sense of national identity, as they may develop a greater interest in global rather than local history.",
+            "examiner_summary": "The second paragraph effectively highlights concerns about cultural and identity loss due to language dominance. The argument is well-structured but suffers from some grammatical inconsistencies and could benefit from more precise vocabulary."
+        },
+        "3": {
+            "content": "Regarding the positive impacts of this trend, several points stand out. Firstly, dominant languages, particularly English, significantly enhance cooperation between regions. This has facilitated the rise of multinational corporations that depend on efficient cross-border communication. Such companies not only create jobs locally but also contribute to the tax revenue of local governments.",
+            "examiner_summary": "This paragraph presents the advantages of having dominant languages, focusing on economic benefits and improved international cooperation. The use of examples is strong, but the paragraph could use more varied sentence structures and clearer cohesion."
+        },
+        "4": {
+            "content": "Moreover, mastering a dominant language connects individuals globally, opening up diverse opportunities for education, employment, and relocation. For instance, English speakers can access cutting-edge research, apply to a broad range of universities worldwide, and migrate more easily without facing significant language barriers.",
+            "examiner_summary": "This paragraph continues to discuss the benefits of dominant languages, emphasizing personal development and global connectivity. The examples are relevant and effectively illustrate the points made. However, some lexical choices could be improved for academic writing."
+        },
+        "5": {
+            "content": "In conclusion, while the spread of dominant languages may erode national identity and diminish cultural diversity, it also offers substantial benefits for both national economies and individual advancement.",
+            "examiner_summary": "The conclusion succinctly recaps the essay's arguments, weighing both the positive and negative impacts of language dominance. It maintains a balanced view but could enhance its impact with more compelling concluding phrases."
+        }
+    }
+}

@@ -1,0 +1,22 @@
+{
+    "1":{
+        "1": ["CC", "Enhanced Clarity", "Expanded the phrase to provide a clearer introduction, setting a formal tone from the outset."],
+        "2": ["LR", "Lexical Variation", "The insertion of 'just' adds emphasis and nuances the sentence, suggesting that children are beyond simply important."],
+        "3": ["LR", "Word Choice", "Replaced 'distraction' with 'diversion' to avoid negative connotations associated with the original word."],
+        "4": ["CC", "Elimination of Unnecessary Punctuation", "Removed the comma to connect the clause more directly, enhancing the flow of the sentence."],
+        "5": ["LR", "Precise Vocabulary", "Changed 'important' to 'crucial' to intensify the degree of importance, aligning with the formal academic style."],
+        "6": ["GRA", "Accuracy in Expression", "Rephrased to 'is well-understood' to enhance the authority of the statement and improve grammatical structure."],
+        "7": ["GRA", "Structural Clarity", "Clarified the subject of the sentence by specifying 'the way parents educate' their children, improving readability and precision."],
+        "8": ["CC", "Coherence and Cohesion", "Adjusted the sentence structure to enhance logical flow and connect ideas more clearly."],
+        "9": ["CC", "Transition Smoothness", "Replaced 'Some people hold the view that' with 'While some believe' to introduce opposing views smoothly and succinctly."],
+        "10": ["GRA", "Pronoun Consistency", "Changed 'the' to 'their' to ensure consistency in pronoun usage, enhancing clarity."],
+        "11": ["LR", "Word Choice", "Switched 'want' with 'desire' to use a less common and more formal synonym, improving lexical resource."],
+        "12": ["TR", "Clarification of Position", "Expanded the sentence to clearly state the author's position and reasoning, directly addressing the task response."],
+        "13": ["GRA", "Error Correction", "Removed unnecessary repetition of 'is harmful for', streamlining the sentence."],
+        "14": ["CC", "Added Detail for Clarity", "Inserted specific actions parents might take, adding detail and clarity to the argument."],
+        "15": ["GRA", "Noun Precision", "Changed 'requirements' to 'requests' to use a more specific and appropriate noun, reducing ambiguity."],
+        "16": ["CC", "Active Voice", "Changed 'listening children’s voices' to 'listen to their wishes', which uses active voice and is more direct and engaging."],
+        "17": ["GRA", "Verb Form", "Corrected 'choice' to 'choose' to use the correct verb form, improving grammatical accuracy."],
+        "18": ["LR", "Word Choice", "Refined 'happy thing' to 'fulfilling', which is a more precise and academically appropriate term."]
+    }
+}

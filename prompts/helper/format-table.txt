@@ -1,0 +1,161 @@
+act as IELTS revise assistant, to help the writer to revise the IELTS writing task 2 essay,currently I need you to understand rules and generate the "analysis table" based on the following information
+
+To reduce the prompt length and the output length, first I will define a char to represent some long words.
+Chars defined:
+- #1# => <span style="color:red; font-weight:bold;">
+- #2# => </span>
+
+
+Revision Steps:
+Revise detailly, e.g. divide whole essay into 4~5 paragraphs, and for each paragraphs, do a deep five revision
+	For the Revise detailly for each paraphara, there 3 steps:
+		1. revise at the origin text by using marks, {number} + new/replcement. Check more details of "marks in origin paragraph"
+		2. generate a explaination revise table, Check more details of "explaination revise table"
+		3. generate a summary for each paragraph, Check more details of "summary for each paragraph"
+
+
+Revise detailly -> marks in origin paragraph:
+- each time when revise happened, no matter its a replcement, insertion, deletion, always use a number before the start, the number starts from 1 and incremtenal, e.g. 
+    origin: `become a good parent`
+    revised: `become a 1~~good~~#1#beneficial#2# parent`
+- if do replacement, use strigthroght symbol `~~` to surround the origin text, and add the replaced text(with blod and red style) next to it, e.g. 
+	origin: `become a good parent`
+	revised: `become a 1~~good~~#1#beneficial#2# parent`
+- if the revise only delete words,phrases or sentences, just use strikthroght symbol and bold red style for the specific text, e.g.
+	origin: the way of parents
+	revise: the way 3#1#~~of~~#2# parents
+- if the revise only add words, phrases or sentences, just use bold red font insert the specific position, e.g.
+	origin: `different results. if`
+	revised: `different results. 7#1#In my opinion,#2# if`
+
+
+Revise detailly -> explanation revise table:
+- format of revise table is markdown table, has 4 columns, INDEX, ERRORS/CHANGES, ERROR TYPE, COMMENTS/BENCHMARK
+- For INDEX column, it just the specific number in the "marks in origin paragraph"
+- for ERRORS/CHANGES column, it just extract the revised the content except the number, e.g.
+	in the revised paragraph: `become a 1~~good~~#1#beneficial#2# parent`
+	for the ERRORS/CHANGES column: `~~good~~#1#beneficial#2#`
+- for ERROR TYPE column, it is used to summary what type of literacy problem is related to the criteria of IELTS writing task, it has 2 parts of information
+	1. non-standard error type
+	2. criterial type
+	criterial type are the keys of the following json, the value of each key is a list of non-standard error type, e.g.
+			{
+			  "Task Response (TR)": [],
+			  "Coherence and Cohesion (CC)": [
+			    "Redundant fillers",
+			    "Added a Cohesive Device",
+			    "Cohesive Device Error",
+			    "Fillers Progression"
+			  ],
+			  "Grammatical Range and Accuracy (GRA)": [
+			    "Verb Usage Error",
+			    "Word Syntax Error",
+			    "Additional Punctuation Mark",
+			    "Grammar Rule",
+			    "Missing Preposition",
+			    "Word Tense Error",
+			    "Incorrect Pronoun Used",
+			    "Comma Splice",
+			    "Missing Article",
+			    "Subject-Verb Agreement",
+			    "Misusage of Conjunction",
+			    "Misusage of Punctuation Mark",
+			    "Misusage of Article",
+			    "Incorrect Determiner",
+			    "Subject-Verb Agreement"
+			  ],
+			  "Lexical Resource (LR)": [
+			    "Common Term",
+			    "Misspelled Words",
+			    "Redundancy of Words",
+			    "Informality",
+			    "Redundancy",
+			    "Word Syntax Error",
+			    "Informal Term",
+			    "Contraction Used"
+			  ]
+			}
+	Note: it is a default list for non-standard error type but fully list for criterial type, so if the error type is not in the list, just add it to the list, normally, within 4 words.
+	The formant is use red bold for the non-standard error and put another line for the criterial type, e.g.
+		`#1#Verb Usage Error#2#<br>Grammatical Range and Accuracy (GRA)`
+- for COMMENTS/BENCHMARK column, it is used to give some comments or benchmark for the specific revise, to notify the writer what is the problem and how to revise it, e.g.
+	`The phrases 'good and bad' are not inherently informal, but they are considered relatively basic and common in their usage. IELTS writing tasks typically require a more objective and analytical approach.`
+
+Revise detailly -> summary for each paragraph:
+- From the examiner's point of view to understand the writer made in this paragraph expression, understand and summarize writer's intention and some good and bad places.
+- e.g: This introduction paragraph sustained the task. The writer was able to include the paraphrased situation. However, there is an error noted that can affect the sentence.
+
+
+
+===== If you understand, just answer "understand", then I will give you a answer Format and sample output =====
+
+Output Format:
+"""
+Task Analysis
+{table of task analysis}
+
+Essay Revision
+{Essay revision begin}
+
+{paragragh 1 text with revise symbols}
+{revise explaination table1}
+{summay the paragraph1}
+
+{paragragh 2 text with revise symbols}
+{revise explaination table2}
+{summay the paragraph2}
+
+....
+
+{last paragragh text with revise symbols}
+{revise explaination last table}
+{summay the last paragraph}
+
+{Essay revision end}
+"""
+
+Output Sample:
+"""
+## Task Analysis
+
+| Aspect                 | Details                                                                                                  |
+|------------------------|----------------------------------------------------------------------------------------------------------|
+| **Essay Topic**        | Some parents give their children everything that their children ask for or allow them to do whatever they want to do. Is this good for children? What could be consequences for these children when they grow up? |
+| **Key Questions**      | 1. Give your opinion if this situation is good for children?                                                                            |
+|                        | 2. What could be consequences for these children when they grow up?                                      |
+| **Keywords and Synonyms** |                                                                                                          |
+| *parents*              | guardians, nurturer, custodian                                                                           |
+| *give*                 | extend, provide, supply                                                                                  |
+| *children*             | youngsters, minors, young people, offspring, young generation, young population, rising generation       |
+| *ask for*              | need and wants, requests, appeal                                                                         |
+| *allow*                | permit, authorize, grant                                                                                 |
+| *to do whatever they want to do* | do as they please, do as they wish, do what they want     
+
+
+## Essay Revision
+
+It is known to all that how to become a 1~~good~~#1#beneficial#2# parent has been talked about all the time. Since young children 2~~has~~#1#have#2# many demands, the way 3#1#~~of~~#2#  parents 4#1#~~to~~#2#  satisfy and teach them is 5~~curial~~#1#crucial#2# for 6~~the~~#1#their#2# future development of them. Whether to permit children to do whatever they want or set some limitations will cause different results. 7#1#In my opinion#2#8#1#,#2# 9~~If~~#1#if#2# parents allow their children to do everything, 10~~Children~~#1#children#2# may get such benefits.
+
+
+| INDEX | ERRORS/CHANGES   | Error Type                                    | COMMENTS/BENCHMARK                                                   |
+|------|------------------|---------------------------------------------------|---------------------------------------------------------------------|
+| 1    | ~~good~~#1#beneficial#2#   | #1#Common Term#2#<br>Lexical Resource (LR)                 | The phrases 'good and bad' are not inherently informal, but they are considered relatively basic and common in their usage. IELTS writing tasks typically require a more objective and analytical approach. |
+| 2    | ~~has~~#1#have#2#          | #1#Verb Usage Error#2# Grammatical Range and Accuracy (GRA) | Change the verb form to fit the context. "have" – to possess something or to do something. "has" – if the subject has done something at some point in their life. |
+| 3    | #1#~~of~~#2#             | #1#Redundant fillers#2# (CC)                          | This can be deleted as this has no significant idea and more like a filler statement, which is unnecessary and only makes the sentence long. |
+| 4    |   #1#~~to~~#2#                 |  #1#Redundant fillers#2# (CC)                                                     |   This can be deleted as this has no significant idea and more like a filler statement, which is unnecessary and only makes the sentence long.                                                                  |
+| 5    | ~~curial~~#1#crucial#2#    | #1#Misspelled Words#2# Lexical Accuracy (LR)            | There is a mistyped letter here. It will give the examiner an impression that you have poor mastery of words. |
+| 6    | ~~the~~#1#their#2#         | #1#Word Syntax Error#2# Grammatical Range and Accuracy (GRA) | Change the article "the" to a pronoun "their" to fit the context and to have a greater meaning in the sentence. |
+| 7    | #1#In my opinion#2#    | #1#Added a Cohesive Device#2# Coherence and Cohesion (CC) | Added to ensure that your composition has a nice flow of ideas. This is to organize the concepts you wish to express and will assist your audience in understanding your point of view as a writer. |
+| 8    | #1#,#2#                | #1#Additional Punctuation Mark#2# Grammatical Range and Accuracy (GRA) | Since there is a cohesive device inserted in the sentence, better use a comma to separate it from the original sentence. |
+| 9    | ~~If~~#1#if#2#             | #1#Grammar Rule#2# Grammatical Range and Accuracy (GRA) | Since this is no longer the first word in your sentence due to additional cohesive device, write it in a lowercase form. |
+| 10   | ~~Children~~#1#children#2# | #1#Improper Capitalization#2# Grammatical Range and Accuracy (GRA) | It seems that you capitalized this word even if it is not the first word in the sentence or it is not a proper noun. You can capitalize words if it is a proper noun and if it is at the beginning of your sentence. |
+
+> **NOTE**:  <br><br> This introduction paragraph sustained the task. The writer was able to include the paraphrased situation. However, there is an error noted that can affect the sentence.
+"""
+
+If you understand, just answer "understand". after that I will give you {paragragh 2 text with revise symbols} and based on that, you need to generate {revise explaination table2} and {summay the paragraph2}. If you response is too long, you can split it into several parts.
+
+
+
+
+

@@ -1,0 +1,8 @@
+The following content between ``` is part2 input, based on it , you need to generate part2 output, make it in a code block with json formant, if it is long, you can answer me more than 1 time.
+
+score prompt
+
+Task Response
+Coherence and Cohesion
+Grammatical Range and Accuracy
+Lexical Resource

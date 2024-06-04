@@ -1,0 +1,50 @@
+Input Sample of Task Essay Revision paragraph2:
+```json
+{
+  "origin_content_dict": {
+    2: """First, children could be more independent and have their own minds. For example, if a child wants to play  2  more hours football instead of finished him homework which will be checked at tomorrow, then he will get the result that teacher blame him which may make him feel ashame.And during this period, children could know do something is good or bad in nature, because he both make the decision and then get consequences. The children could be more faster to take the responsibilities for their own minds than other children who are always told by their parents to do something. Besides, the possibility of development in diversity could also be higher for the children who are allowed to do whatever they want to do that others. It’s important for people to seek his own interest, and it will be better to find these in their childhood. However, finding interest is jut like a period of mistake trying, as you could something you are keen to do at first time, but then lose patient or get a neck bottle quickly later. For children who are allowed to do everything, it just like they are allowed to begin to seeking their own interests earlier than others, so they could have more time to give up the “wrong interests” and got the “right interests”."""
+  }
+}
+```
+
+Output Sample of Task Essay Revision paragraph2:
+"""
+{
+	"revised_content_dict": {
+		1: {
+      "content": "Firstly, children could be more independent and have their minds. For example, if a child wants to play two more hours of football instead of finishing his homework, which will be checked tomorrow, then he will get the result that the teacher blames him, which may make him feel ashamed. During this period, children could know doing something is positive or negative in nature, because they both make the decision and then get consequences. The children could be faster to take responsibility for their own minds than other children who are always told by their parents to do something. Furthermore, the possibility of development in diversity could also be higher for the children who are allowed to do whatever they want to do than others. It is important for people to seek their own interests, and it will be better to find these in their childhood. However, finding interest is just like a period of mistake trying, as people could do something they are keen to do at first time, but then lose patience or slow or halt free movement and progress quickly later. For children who are allowed to do everything, it allowed to begin to seek their own interests earlier than others. Therefore, they could have more time to give up the incorrect interests and get the correct",
+      "examiner_summary":: "The writer was able to give his or her opinion if parents give their children everything that their offspring ask for or allow them to do whatever they want to do is good for children. There are enough supporting facts to back up the topic. However, inconsistencies in the text have been discovered."
+    }
+  }
+}
+"""
+
+From the above example, you can see the revised paragraph do the following updates:
+	replacement: First, children => Firstly, children ("Common Term (LR)")
+	deletion: their own minds. => their  minds. ("Lexical Enhancement (LR)")
+	replacement: play 2 more => play two more ("Informal Term (LR)")
+	deletion: checked at tomorrow, then => checked  tomorrow, then ("Prepositional Error (GRA)")
+	insertion: that teacher => that the teacher ("Redundancy (CC)")
+	replacement: teacher blame him which => teacher blames him, ("Verb Tense Error (GRA)")
+	replacement: feel ashame.And during this period, => feel ashamed. During this ("Word Usage Error (LR)")
+	replacement: know do something is => know doing something ("Gerund Form Error (GRA)")
+	replacement: is good or bad => is positive or ("Word Choice Enhancement (LR)")
+	replacement: or bad in nature, => or negative in ("Word Choice Enhancement (LR)")
+	replacement: because he both make => because they both ("Pronoun Consistency (GRA)")
+	deletion: be more faster to => be  faster to ("Comparative Error (GRA)")
+	replacement: take the responsibilities for their => take responsibility for ("Unnecessary Article (GRA)")
+	replacement: something. Besides, the => something. Furthermore, the ("Formal Transition (LR)")
+	replacement: It’s important for => It is important ("Formality Adjustment (GRA)")
+	replacement: seek his own interest, => seek their own ("Pronoun Consistency (GRA)")
+	replacement: own interest, and => own interests, and ("Noun Form Error (LR)")
+	replacement: is jut like a => is just like ("Spelling Error (LR)")
+	replacement: as you could something you => as people could do something ("Impersonal Expression (LR)")
+	replacement: something you are keen => something they are ("Pronoun Consistency (GRA)")
+	replacement: lose patient or get => lose patience or ("Noun/Adjective Confusion (LR)")
+	replacement: or get a neck bottle quickly later. => or slow or halt free movement and progress quickly ("Idiomatic Error Lexical Resource (LR)")
+
+It contains LR, GRA, CC, revision points, and the specific revise points based on the criteria is good.
+
+For examiner_summary , you are only allowed to write summary based on the origin text, do not write the summary based on the revised text. in this examiner_summary, you can see examiner summary the content about the opinion and example, and the error point in the content.
+
+These are the part1 of the task, If you understand, just answer "UNDERSTAND", then I will give you next instruction about part2 of the task and what the inherited connection between part1 and part2.

@@ -1,0 +1,177 @@
+Still for Criteria. For each of the four criteria, there are numerous specific points of revision, each corresponding to a default list of specific revision points based on the criteria. When you improve the origin essay, you must improve in a comprehensive way, which means you must include multiple aspects of these criteria(must include GRA); and use several specific points, avoid most specific points are same, at least use 30 different specific points.
+
+The default 'criteria: error_points' are as follows:
+```
+			{
+			  "Task Response (TR)": [],
+			  "Coherence and Cohesion (CC)": [
+			    "Redundant fillers",
+			    "Added a Cohesive Device",
+			    "Cohesive Device Error",
+			    "Fillers Progression"
+			  ],
+			  "Grammatical Range and Accuracy (GRA)": [
+			    "Verb Usage Error",
+			    "Word Syntax Error",
+			    "Additional Punctuation Mark",
+			    "Grammar Rule",
+			    "Missing Preposition",
+			    "Word Tense Error",
+			    "Incorrect Pronoun Used",
+			    "Comma Splice",
+			    "Missing Article",
+			    "Subject-Verb Agreement",
+			    "Misusage of Conjunction",
+			    "Misusage of Punctuation Mark",
+			    "Misusage of Article",
+			    "Incorrect Determiner",
+			    "Subject-Verb Agreement"
+			  ],
+			  "Lexical Resource (LR)": [
+			    "Common Term",
+			    "Misspelled Words",
+			    "Redundancy of Words",
+			    "Informality",
+			    "Redundancy",
+			    "Word Syntax Error",
+			    "Informal Term",
+			    "Contraction Used"
+			  ]
+			}
+```
+
+If you believe a revision is necessary but not listed, it's acceptable to proceed with the revision, and you can identify the error point using just four words.
+
+Next, let me introduce the output, it can be divided into two main parts, but you need not answer them in one go but separately. The two parts are as follows:
+
+The first part consists of "Task Analysis" and "Essay Revision."
+The second part comprises comments/benchmarks specific to the revision based on the output of the first part.
+
+Please provide one part of the answer at a time. For generating the second part, I will give you specific instructions based on the first part's answer.
+
+Let's start with the first part input and output:
+
+I will provide additional details regarding the format and a sample of Part 1's input and output, segmented into 'Task Analysis' and 'Essay Revision'.
+
+Input format of whole part1:
+```json
+{
+	"topic": $essay_topic,
+	"origin_content_dict": {
+		$index1: $paragraph1,
+		$index2: $paragraph2,
+		...
+	}
+}
+```
+
+Output format of whole part1:
+```json
+{
+	"Task Analysis": {
+		"Aspect": [
+			{
+				"Essay Topic": $essay_topic
+			},
+			{
+				"Key Questions": $key_questions
+			},
+			{
+				"Keywords and Synonyms": $keywords_synonyms
+			}
+		]
+	},
+	"revised_content_dict": {
+		$index1: {
+			"content": $revised_paragraph1,
+			"examiner_summary": $examiner_summary1
+		},
+		...
+	}
+}
+```
+
+Input Sample of "Task Analysis":
+"""
+```json
+{"topic": "Some parents give their children everything that their children ask for or allow them to do whatever they want to do. Is this good for children? What could be consequences for these children when they grow up?"}
+```
+"""
+
+Output Sample of "Task Analysis":
+"""
+```json
+{
+	"Task Analysis": {
+			"Aspect": [
+				{
+					"Essay Topic": "Some parents give their children everything that their children ask for or allow them to do whatever they want to do. Is this good for children? What could be consequences for these children when they grow up?"
+				},
+				{
+					"Key Questions": [
+						"1. Give your opinion if this situation is good for children?",
+						"2. What could be consequences for these children when they grow up?"
+					]
+				},
+				{
+					"Keywords and Synonyms": {
+						"parents": "guardians, nurturer, custodian",
+						"give": "extend, provide, supply",
+						"children": "youngsters, minors, young people, offspring, young generation, young population, rising generation",
+						"ask for": "need and wants, requests, appeal",
+						"allow": "permit, authorize, grant",
+						"to do whatever they want to do": "do as they please, do as they wish, do what they want"
+					}
+				}
+			]
+		}
+}
+```
+
+From the output of 'Task Analysis,' we observe two fixed columns: 'Essay Topic' and 'Keywords and Synonyms.' You are required to populate these columns based on the provided input. However, the column labeled 'Key Questions' is determined by the essay topic and can be renamed accordingly.
+
+Now, transitioning to the essay revision section. It's imperative that you provide meticulous detail in accordance with the four criteria: Task Response, Coherence and Cohesion, Grammatical Range and Accuracy, and Lexical Resource, along with the specific revision points tied to each criterion. You MUST Ensure that your revisions address multiple aspects of these criteria(must include GRA); and use several  specific points, avoid most specific points are same, at least use 30 different specific points.
+
+
+Input Sample of Task Essay Revision paragraph1:
+"""
+{	
+	"origin_content_dict":
+		{
+			"1": "It is known to all that how to become a good parent has been talked about all the time. Since young children has many demands, the way of parents to satisfy and teach them is curial for the future development of them. Whether to permit children to do whatever they want or set some limitations will cause different results."
+		}
+}
+"""
+
+Output Sample of Task Essay Revision paragraph1:
+"""
+{
+	"revised_content_dict": {
+		"1": {
+			"content": "It is known to all that how to become a beneficial parent has been talked about all the time. Since young children have many demands, the way parents satisfy and teach them is crucial for their future development of them. Whether to permit children to do whatever they want or set some limitations will cause different results. In my opinion, if parents allow their children to do everything, children may get such benefits.",
+			"examiner_summary": """This introduction paragraph sustained the task. The writer was able to include the paraphrased situation. However, there is an error noted that can affect the sentence."""
+		}
+	} 
+}
+"""
+
+In the example above, the revised paragraph 1 incorporates the following updates:
+
+	"replacement: a good parent => a beneficial parent", "Common Term (LR)"
+	"replacement: children has many => children have many", Verb Usage Error (GRA)
+	"deletion: way of parents => way  parents", Redundant fillers (CC)
+	"deletion: parents to satisfy => parents  satisfy", Redundant fillers (CC)
+	"replacement: is curial for => is crucial for", Misspelled Words, (LR)
+	"replacement: for the future => for their future", Word Syntax Error(GRA)
+	"deletion: development of them. => development .",
+	"replacement: results. If parents => results. In my opinion, if parents", Added a Cohesive Device (CC)
+	"replacement: everything, Children may => everything, children may", Improper Capitalization (GRA)
+
+This summary includes LR, GRA, CC revision points, and specific revision points based on the criteria.
+
+It's imperative that you provide meticulous detail in accordance with the four criteria: Task Response, Coherence and Cohesion, Grammatical Range and Accuracy, and Lexical Resource, along with the specific revision points tied to each criterion. You MUST Ensure that your revisions address multiple aspects of these criteria(must include GRA); and use several specific points, avoid most specific points are same, at least use 30 different specific points.
+
+For the examiner_summary, only write a summary based on the original text; do not base it on the revised text. In above examiner_summary, you can find the examiner's summary content and the identified error points within the content.
+
+If you understand, just answer "UNDERSTAND", then I will give you another part1 input/output sample.
+

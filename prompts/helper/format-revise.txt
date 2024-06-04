@@ -1,0 +1,29 @@
+trying to get the good revised IELTS essay text from such instruction:
+
+
+Rules of Revise detailly -> marks in origin pharagraph:
+- each time when revise happened, no matter its a replcement, insertion, deletion, always use a number before the start, the number starts from 1 and incremtenal, e.g. 
+    origin: `become a good parent`
+    revised: `become a 1~~good~~<span style="color:red; font-weight:bold;">beneficial</span> parent`
+- if do replacement, use strigthroght symbol `~~` to surround the origin text, and add the replaced text(with blod and red style) next to it, e.g. 
+	origin: `become a good parent`
+	revised: `become a 1~~good~~<span style="color:red; font-weight:bold;">beneficial</span> parent`
+- if the revise only delete words,pharses or sentences, just use strikthroght symbol and bold red style for the specific text, e.g.
+	origin: the way of parents
+	revise: the way 3<span style="color:red; font-weight:bold;">~~of~~</span> parents
+- if the revise only add words, pharses or sentences, just use bold red font insert the specific position, e.g.
+	origin: `different results. if`
+	revised: `different results. 7<span style="color:red; font-weight:bold;">In my opinion,</span> if`
+
+
+The expected format output:
+```
+It is known to all that how to become a 1~~good~~<span style="color:red; font-weight:bold;">beneficial</span> parent has been talked about all the time. Since young children 2~~has~~<span style="color:red; font-weight:bold;">have</span> many demands, the way 3<span style="color:red; font-weight:bold;">~~of~~</span>  parents 4<span style="color:red; font-weight:bold;">~~to~~</span>  satisfy and teach them is 5~~curial~~<span style="color:red; font-weight:bold;">crucial</span> for 6~~the~~<span style="color:red; font-weight:bold;">their</span> future development of them. Whether to permit children to do whatever they want or set some limitations will cause different results. 7<span style="color:red; font-weight:bold;">In my opinion</span>8<span style="color:red; font-weight:bold;">,</span> 9~~If~~<span style="color:red; font-weight:bold;">if</span> parents allow their children to do everything, 10~~Children~~<span style="color:red; font-weight:bold;">children</span> may get such benefits.
+```
+
+
+Now, you know what is the rule, the following is a messy paragraph copy paste text which missing the format, but it has been revised, you just need to back it correct formant by gussing the replacement, insertion or deletion:
+```
+11FirstFirstly, children could be more independent and have their 12own minds. For example, if a child wants to play 132two more hours 14of football instead of 15finishedfinishing 16himhis homework17, which will be checked 18at tomorrow, then he will get the result that 19the teacher 20blameblames him21, which may make him feel 22ashameashamed. 23And 24duringDuring this period, children could know 25that 26dodoing something is 27goodpositive or 28badnegative in nature29, because 30hethey both make the decision and then get consequences. The children could be 31more faster to take 32the 33responsibilitiesresponsibility for their 34own minds than other children who are 35always told by their parents to do something. 36BesidesFurthermore, the possibility of development in diversity could also be higher for the children who are allowed to do whatever they want to do 37thatthan others. 38It’sIt is important for people to seek 39histheir 40own 41interestinterests, and it will be better to find these in their childhood. However, finding interest is 42jutjust like a period of mistake trying, as 43youpeople could 44do something 45youthey are keen to do at first time, but then lose 46patientpatience or 47get a neck bottleslow or halt free movement and progress quickly later. For children who are allowed to do everything, it 48is just like they are allowed to begin to 49seekingseek their 50own interests earlier than others51,. 52soTherefore53, they could have more time to give up the 54“55wrongincorrect interests” and 56gotget the 57“58rightcorrect interests”.
+```
+e.g. the `11FirstFirstly,` is a replacement, so it should be `11~~First~~<span style="color:red; font-weight:bold;">Firstly</span>`, the `35always told by` is a delettion, so it should be `35<span style="color:red; font-weight:bold;">~~always~~</span>  told by`, the `17, which` is a deletion, so it should be `17<span style="color:red; font-weight:bold;">~~,~~</span>

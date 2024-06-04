@@ -1,16 +1,25 @@
+## setup
+```bash
 virtualenv -p $PYENV_ROOT/versions/3.12.2/bin/python .py3 
 source .py3/bin/activate
 pip install markdown2pdf
+```
 
+## How to use
+- create model(send prompts 1~4 to chatGPT)
+- create $essay folder under tmp/essays with 2 txt file
+  - content.txt
+  - topic.txt
+- run `make step1 $essay`, send part1_input.json to chatGPT, get result and save to part1_output.json
+- run `make step2 $essay`, get tmp/essays/${essay}/diff_description.json as part2 input, check prompts/main/5.txt, send to chatGPT, save result to comments.json
+- run `make step3 $essay`
 
 ## TODO
 [x] generate input function
 [] update prompt to get score
 [] [prompt update] Task Analysis => "key question" should be based on type of topic
-[] convert output under comments and revised into a markdown output
+[x] convert output under comments and revised into a markdown output
 [] be careful with escape in input, like origin text use ", input will appear \", which may make chatGPT consider \" is origin text.
-
-
 
 
 ## Optimize prompt

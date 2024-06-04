@@ -1,0 +1,71 @@
+Upon receiving your part1 output, subsequent inputs will follow based on your Part 1 output. These inputs may consist of multiple parts, particularly for longer paragraphs. I will utilize a script to conduct a comparison between each "origin" and "revised" paragraph.
+
+Your task is to provide comments and benchmarks specific to the revisions based on the comparative results. These comments should encompass the IELTS criteria along with error points, as well as specific revision points tied to each criterion.
+
+I will provide additional details regarding the format and a sample of Part 2's input and output.
+
+
+part2 input overall format:
+'''
+```json
+{
+	"paragraph_index: $paragraph_index,
+	"revision_list": [
+		"$index. $change_type: $description",
+	]
+}
+```
+'''
+
+part2 output overall format:
+'''
+```json
+{
+	"$paragraph_index":  {
+		$index1: [$criteria, $error_point, $reason],
+		$index2: [$criteria, $error_point, $reason],
+	}
+}
+```
+
+'''
+
+Here are the samples of input and output:
+
+part2 input Sample:
+```json
+
+{
+	"paragraph_index": 1,
+	"revision_list": [
+		"1. replacement: a `good` parent => a `beneficial` parent",
+		"2. replacement: children `has` many => children `have` many",
+		"3. deletion: way `of` parents => way  parents",
+		"4. deletion: parents to satisfy => parents  satisfy",
+		"5. replacement: is `curial` for => is `crucial` for",
+		"6. replacement: for `the` future => for `their` future",
+		"7. insertion: not `just` a",
+	]
+}
+```
+
+part2 output Sample:
+```json
+{
+	"1":{
+			"1": ["LR", "Common Term", "The phrases 'good and bad' are not inherently informal, but they are considered relatively basic and common in their usage. IELTS writing tasks typically require a more objective and analytical approach." ],
+			"2": ["GRA", "Verb Usage Error", "Change the verb form to fit the context. 'have' – to possess something or to do something. 'has' – if the subject has done something at some point in their life."],
+			"3": ["CC", "Redundant fillers", "This can be deleted as this has no significant idea and more like a filler statement, which is unnecessary and only makes the sentence long."],	
+			"4": ["CC", "Redundant fillers", "This can be deleted as this has no significant idea and more like a filler statement, which is unnecessary and only makes the sentence long."],
+			"5": ["LR", "Misspelled Words", "There is a mistyped letter here. It will give the examiner an impression that you have poor mastery of words."],
+			"6": ["GRA", "Word Syntax Error", "Change the article 'the' to a pronoun 'their' to fit the context and to have a greater meaning in the sentence."],
+			"7": ["CC", "Added a Cohesive Device", "Added to ensure that your composition has a nice flow of ideas. This is to organize the concepts you wish to express and will assist your audience in understanding your point of view as a writer."],		
+		}
+}
+```
+
+Note, when you generate response, please provide the output in a code block in JSON format exclusively; refrain from using any other format for your response.
+
+In addition. You MUST Ensure that your revisions address GRA.
+
+If you understand, just answer "UNDERSTAND", waiting for my input for first part1, I will give you the part1 input
